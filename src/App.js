@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <h1> COORD TO OS GRID REFERENCE </h1>
+
+            {/* OS IMAGE LOGO */}
+            <img
+                src="./img/os_grid_icon.png"
+                alt="OS Grid Reference Logo - From Funkypenguin24's Flutter App"
+            />
+        </div>
+    );
 }
 
 export default App;
