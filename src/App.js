@@ -1,16 +1,15 @@
+// Libs
 import React from "react";
-import "./App.css";
 
-function App() {
+// Components
+import Header from './Components/Header/Header';
+import Body from './Components/Main/Body';
+
+const App = () => {
     return (
-        <div className="App">
-            <h1> COORD TO OS GRID REFERENCE </h1>
-
-            {/* OS IMAGE LOGO */}
-            <img
-                src="./img/os_grid_icon.png"
-                alt="OS Grid Reference Logo - From Funkypenguin24's Flutter App"
-            />
+        <div>
+            <Header />
+            <Body />
         </div>
     );
 }
