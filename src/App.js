@@ -12,7 +12,7 @@ import colors from "./Common/colors";
 import fonts from "./Common/fonts";
 
 // TEST
-//import LatLongConverter from "./latlong_to_osgrid/latlong_converter";
+//import CoordConverter from "./latlong_to_osgrid/coord_converter";
 // let test = new LatLongConverter();
 // let testDataOSGB = [83945.952, 584136.204];
 // let testDataLatLong = [55.050850, -6.950540];
