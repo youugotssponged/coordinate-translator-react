@@ -11,7 +11,17 @@ import "./Components/layout.css";
 import colors from "./Common/colors";
 import fonts from "./Common/fonts";
 
-// Simple test using styled div to create the header of the page.
+// TEST
+//import LatLongConverter from "./latlong_to_osgrid/latlong_converter";
+// let test = new LatLongConverter();
+// let testDataOSGB = [83945.952, 584136.204];
+// let testDataLatLong = [55.050850, -6.950540];
+// let b = test.getOSGB_FromDec(testDataLatLong[0], testDataLatLong[1]);
+// console.log(b);
+// let c = test.getLatLong_FromOSGB(testDataOSGB[0], testDataOSGB[1]);
+// console.log(c);
+
+// Simple test using styled div to create the header of the page. - Might remove later
 const HeaderDiv = styled.div`
     display: flex;
     justify-content: center;
@@ -23,7 +33,7 @@ const HeaderDiv = styled.div`
 
     & h1 {
         font-family: ${fonts.titleFont};
-        font-size: 90px;
+        font-size: 88px;
         text-align: center;
         overflow: hidden;
         margin-bottom: 20px;
@@ -42,10 +52,12 @@ const HeaderDiv = styled.div`
     }
 `;
 
+
 const App = () => {
     return (
         <>
             <Helmet>
+                {/* ABeeZee font - google fonts */}
                 <link
                     href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&display=swap"
                     rel="stylesheet"
