@@ -5,25 +5,32 @@ import colors from '../Common/colors';
 import fonts from '../Common/fonts';
 
 const HeaderDiv = styled.div`
+    grid-column: 1/13;
+
     display: grid;
-    grid-column: 1/14;
+    grid-template-columns: 2fr repeat(10, 1fr) 2fr;
 
     background-color: ${colors.darkBlue};
     color: white;
 
-    width: 100vw;
+    box-shadow: 0px 0 25px black;
 
     & h1 {
-        grid-column: 2/5;
+        grid-column: 2/11;
         font-family: ${fonts.titleFont};
-        font-size: 5vw;
+        font-size: 4vw;
         font-weight: bold;
         text-align: center;
-        padding-top: 10px;
+        padding-top: 15px;
+        white-space: nowrap; 
+    }
+
+    & h1:hover{
+        color: #878E88;
     }
 
     & img {
-        grid-column: 6/14;
+        grid-column: 11/12;
         filter: invert(1);
     }
 `;
