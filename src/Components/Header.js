@@ -6,14 +6,11 @@ import fonts from '../Common/fonts';
 
 const HeaderDiv = styled.div`
     grid-column: 1/13;
-
     display: grid;
     grid-template-columns: 2fr repeat(10, 1fr) 2fr;
-
     background-color: ${colors.darkBlue};
     color: white;
-
-    box-shadow: 0px 0 25px black;
+    box-shadow: 0px 0px 50px ${colors.darkBlue};
 
     & h1 {
         grid-column: 2/11;
@@ -23,6 +20,7 @@ const HeaderDiv = styled.div`
         text-align: center;
         padding-top: 15px;
         white-space: nowrap; 
+        cursor: pointer;
     }
 
     & h1:hover{
@@ -45,6 +43,6 @@ const Header = () => {
             ></img>
         </HeaderDiv>
     );
-};
+}
 
 export default Header;

@@ -9,12 +9,13 @@ import "./Components/globals.css";
 
 // Components
 import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 // 12 column grid for the page - wrapping grid
 const PageGridContainerDiv = styled.div`
     display: grid;
     grid-template-columns: 2fr repeat(10, 1fr) 2fr;
-    grid-template-rows: repeat(9, 1fr);
+    grid-template-rows: 2fr repeat(13, 1fr) 2.12fr;
 `;
 
 
@@ -30,9 +31,10 @@ const App = () => {
             </Helmet>
             <PageGridContainerDiv>
                 <Header />
+                <Footer />
             </PageGridContainerDiv>
         </>
     );
-};
+}
 
 export default App;
