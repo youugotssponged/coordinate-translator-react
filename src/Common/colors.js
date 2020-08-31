@@ -1,9 +1,8 @@
 const colors = {
-    iceBlue: "#93C6D6",
+    lightPurple: "#C7CEDB",
     darkBlue: "#14213D",
-    steelGrey: '#C4C4C4',
-}
-
-// TODO: Add colours / shades
+    steelGrey: "#C4C4C4",
+    activeRed: "#FC2F00",
+};
 
 export default colors;

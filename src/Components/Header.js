@@ -20,11 +20,6 @@ const HeaderDiv = styled.div`
         text-align: center;
         padding-top: 15px;
         white-space: nowrap; 
-        cursor: pointer;
-    }
-
-    & h1:hover{
-        color: #878E88;
     }
 
     & img {

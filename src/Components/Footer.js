@@ -25,6 +25,10 @@ const FooterStyleDiv = styled.div`
         display: block;
         margin: 0 auto;
     }
+
+    & img:hover {
+        filter: invert(100%);
+    }
 `;
 
 const Footer = () => {

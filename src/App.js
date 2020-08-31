@@ -10,6 +10,7 @@ import "./Components/globals.css";
 // Components
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import BodyContainer from "./Components/BodyContainer";
 
 // 12 column grid for the page - wrapping grid
 const PageGridContainerDiv = styled.div`
@@ -35,6 +36,7 @@ const App = () => {
             </Helmet>
             <PageGridContainerDiv>
                 <Header />
+                <BodyContainer /> {/* Main Application */}
                 <Footer />
             </PageGridContainerDiv>
         </>
