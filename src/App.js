@@ -18,7 +18,6 @@ const PageGridContainerDiv = styled.div`
     grid-template-rows: 2fr repeat(13, 1fr) 2.12fr;
 `;
 
-
 const App = () => {
     return (
         <>
@@ -28,6 +27,11 @@ const App = () => {
                     href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&display=swap"
                     rel="stylesheet"
                 />
+                {/* Fredoka One - Google fonts */}
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+                    rel="stylesheet"
+                />
             </Helmet>
             <PageGridContainerDiv>
                 <Header />
@@ -35,6 +39,6 @@ const App = () => {
             </PageGridContainerDiv>
         </>
     );
-}
+};
 
 export default App;
