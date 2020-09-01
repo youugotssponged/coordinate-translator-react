@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 import colors from "../Common/colors";
 
+import LatLongArea from "./LatLongArea";
+//import OsgbArea from "./OsgbArea";
+
 const BodyContainerDiv = styled.div`
     background-color: ${colors.lightPurple};
     grid-row: 3/14;
@@ -32,6 +35,13 @@ const LatLongButton = styled.button`
 
     font-size: 1.5vw;
     border-radius: 30px;
+    border-style: solid;
+    border-color: ${colors.darkBlue};
+    border-width: 5px;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 `;
 
 const OsgbButton = styled.button`
@@ -40,6 +50,14 @@ const OsgbButton = styled.button`
 
     font-size: 1.5vw;
     border-radius: 30px;
+
+    border-style: solid;
+    border-color: ${colors.darkBlue};
+    border-width: 5px;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 `;
 
 // TODO: Style Main Buttons
@@ -52,15 +70,6 @@ const OsgbButton = styled.button`
 const BodyContainer = () => {
     const [LatLongButtonClicked, setLatLongButtonClicked] = useState(true); // Renders first and Enabled
     const [OsgbButtonClicked, setOsgbButtonClicked] = useState(false); // Not rendered and Disabled
-
-    const activeButtonColor = {
-        backgroundColor: "white",
-    };
-
-    const inactiveButtonColor = {
-        backgroundColor: "green",
-        color: "black",
-    };
 
     const LatLongButtonHandler = () => {
         // Render LatLong Area
@@ -86,6 +95,15 @@ const BodyContainer = () => {
     const imgFlipLeft = { transform: "scaleX(-1)" };
     const imgFlipRight = { transform: "scaleX(1)" };
 
+    const activeButtonColor = {
+        backgroundColor: "white",
+    };
+
+    const inactiveButtonColor = {
+        backgroundColor: "green",
+        color: "black",
+    };
+
     return (
         <BodyContainerDiv>
             <LatLongButton
@@ -97,7 +115,7 @@ const BodyContainer = () => {
                 disabled={LatLongButtonClicked}
                 onClick={() => LatLongButtonHandler()}
             >
-                Lat/Long to OSGB
+                Lat/Long
             </LatLongButton>
             <img
                 src="/img/arrow.png"
@@ -111,8 +129,10 @@ const BodyContainer = () => {
                 disabled={OsgbButtonClicked}
                 onClick={() => OsgbButtonHandler()}
             >
-                OSGB to Lat/Long
+                OSGB
             </OsgbButton>
+
+            <LatLongArea />
         </BodyContainerDiv>
     );
 };

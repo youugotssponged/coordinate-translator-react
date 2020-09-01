@@ -27,7 +27,7 @@ const FooterStyleDiv = styled.div`
     }
 
     & img:hover {
-        filter: invert(100%);
+        filter: invert(70%);
     }
 `;
 

@@ -94,6 +94,17 @@ class CoordConverter {
 
         return decDeg;
     }
+
+    getDegreeFromDecimal(dec){
+        let posDec = dec;
+        if(dec < 0) posDec *= -1;
+
+        let deg = Number(posDec);
+        let min = Number(((posDec - deg) * 60));
+        let sec = (posDec - deg - min / 60) * 3600;
+
+        return [Number(dec), min, sec];
+    }
 }
 
 export default CoordConverter;

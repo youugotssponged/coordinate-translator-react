@@ -26,6 +26,10 @@ const HeaderDiv = styled.div`
         grid-column: 11/12;
         filter: invert(1);
     }
+
+    & img:hover {
+        filter: invert(0);
+    }
 `;
 
 const Header = () => {
