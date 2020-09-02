@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/coordinate-translator-react/precache-manifest.1fb7dcc163ecba160c83cd4e99946fa8.js"
+  "/coordinate-translator-react/precache-manifest.97963d99798e3ccc30701ff45d3c54c6.js"
 );
 
 self.addEventListener('message', (event) => {
