@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "38d1217bb4d737196255f0e85c3c3049",
+    "revision": "a893dd3b0bfa7f91ccb31d2c3c98984c",
     "url": "/coordinate-translator-react/index.html"
   },
   {
-    "revision": "afba6323a354e519cbc8",
+    "revision": "c19643d8fdf08b6b54f9",
     "url": "/coordinate-translator-react/static/css/main.7cbd8309.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/coordinate-translator-react/static/js/2.b0af891e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "afba6323a354e519cbc8",
-    "url": "/coordinate-translator-react/static/js/main.54eaf322.chunk.js"
+    "revision": "c19643d8fdf08b6b54f9",
+    "url": "/coordinate-translator-react/static/js/main.f4d7909b.chunk.js"
   },
   {
     "revision": "2214517e0992801e77c7",

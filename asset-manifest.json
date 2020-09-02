@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/coordinate-translator-react/static/css/main.7cbd8309.chunk.css",
-    "main.js": "/coordinate-translator-react/static/js/main.54eaf322.chunk.js",
-    "main.js.map": "/coordinate-translator-react/static/js/main.54eaf322.chunk.js.map",
+    "main.js": "/coordinate-translator-react/static/js/main.f4d7909b.chunk.js",
+    "main.js.map": "/coordinate-translator-react/static/js/main.f4d7909b.chunk.js.map",
     "runtime-main.js": "/coordinate-translator-react/static/js/runtime-main.dd2b129b.js",
     "runtime-main.js.map": "/coordinate-translator-react/static/js/runtime-main.dd2b129b.js.map",
     "static/js/2.b0af891e.chunk.js": "/coordinate-translator-react/static/js/2.b0af891e.chunk.js",
     "static/js/2.b0af891e.chunk.js.map": "/coordinate-translator-react/static/js/2.b0af891e.chunk.js.map",
     "index.html": "/coordinate-translator-react/index.html",
-    "precache-manifest.26241eff0c049637360a8e7c3d0c105e.js": "/coordinate-translator-react/precache-manifest.26241eff0c049637360a8e7c3d0c105e.js",
+    "precache-manifest.1fb7dcc163ecba160c83cd4e99946fa8.js": "/coordinate-translator-react/precache-manifest.1fb7dcc163ecba160c83cd4e99946fa8.js",
     "service-worker.js": "/coordinate-translator-react/service-worker.js",
     "static/css/main.7cbd8309.chunk.css.map": "/coordinate-translator-react/static/css/main.7cbd8309.chunk.css.map",
     "static/js/2.b0af891e.chunk.js.LICENSE.txt": "/coordinate-translator-react/static/js/2.b0af891e.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.dd2b129b.js",
     "static/js/2.b0af891e.chunk.js",
     "static/css/main.7cbd8309.chunk.css",
-    "static/js/main.54eaf322.chunk.js"
+    "static/js/main.f4d7909b.chunk.js"
   ]
 }
