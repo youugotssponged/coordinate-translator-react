@@ -3,8 +3,9 @@ import styled from "styled-components";
 
 import colors from "../Common/colors";
 
+// Components
 import LatLongArea from "./LatLongArea";
-//import OsgbArea from "./OsgbArea";
+import OsgbArea from "./OsgbArea";
 
 const BodyContainerDiv = styled.div`
     background-color: ${colors.lightPurple};
@@ -18,15 +19,16 @@ const BodyContainerDiv = styled.div`
     display: grid;
     grid-template-columns: repeat(12, 2fr);
     grid-template-rows: repeat(12, 2fr);
+`;
 
-    & img {
-        grid-row: 2/3;
-        grid-column: 6/8;
-        padding-top: 10px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+const ImageArrow = styled.img`
+    grid-row: 2/3;
+    grid-column: 6/8;
+    padding-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transform: ${(props) => props.flipDirection};
 `;
 
 const LatLongButton = styled.button`
@@ -42,6 +44,9 @@ const LatLongButton = styled.button`
     display: block;
     margin-left: auto;
     margin-right: auto;
+
+    background-color: ${(props) => props.activeColor};
+    color: black;
 `;
 
 const OsgbButton = styled.button`
@@ -58,15 +63,14 @@ const OsgbButton = styled.button`
     display: block;
     margin-left: auto;
     margin-right: auto;
+
+    background-color: ${(props) => props.activeColor};
+    color: black;
 `;
 
-// TODO: Style Main Buttons
-
 // TODO: Implement LatLong and Osgb Input Area Components
-
 // Refer to FIGMA DESIGN
 
-// Body container will hold 2 buttons to which switch what's rendered, button changes colour dynamically based on what's currently rendered
 const BodyContainer = () => {
     const [LatLongButtonClicked, setLatLongButtonClicked] = useState(true); // Renders first and Enabled
     const [OsgbButtonClicked, setOsgbButtonClicked] = useState(false); // Not rendered and Disabled
@@ -88,51 +92,43 @@ const BodyContainer = () => {
         console.log(`OSGB: ${OsgbButtonClicked}`);
     };
 
-    // Clean up and make dynamic instead of two seperate style objects // arrow img
-    // TODO: CSS Transform rotate animation - keyframes
-    // Note: the styled library has a { keyframes } - look into it
-
-    const imgFlipLeft = { transform: "scaleX(-1)" };
-    const imgFlipRight = { transform: "scaleX(1)" };
-
-    const activeButtonColor = {
-        backgroundColor: "white",
-    };
-
-    const inactiveButtonColor = {
-        backgroundColor: "green",
-        color: "black",
+    const switchAreas = () => {
+        if (LatLongButtonClicked) {
+            return <LatLongArea />;
+        } else if (OsgbButtonClicked) {
+            return <OsgbArea />;
+        } else {
+            console.log("Error: Neither Areas are rendering...");
+        }
     };
 
     return (
         <BodyContainerDiv>
             <LatLongButton
-                style={
-                    LatLongButtonClicked
-                        ? inactiveButtonColor
-                        : activeButtonColor
+                activeColor={
+                    LatLongButtonClicked ? colors.activeGreen : "white"
                 }
                 disabled={LatLongButtonClicked}
                 onClick={() => LatLongButtonHandler()}
             >
                 Lat/Long
             </LatLongButton>
-            <img
-                src="/img/arrow.png"
-                alt="current conversion"
-                style={LatLongButtonClicked ? imgFlipLeft : imgFlipRight}
+            <ImageArrow
+                src={"./img/arrow.png"}
+                flipDirection={
+                    LatLongButtonClicked ? "scaleX(-1)" : "scaleX(1)"
+                }
             />
             <OsgbButton
-                style={
-                    OsgbButtonClicked ? inactiveButtonColor : activeButtonColor
-                }
+                activeColor={OsgbButtonClicked ? colors.activeGreen : "white"}
                 disabled={OsgbButtonClicked}
                 onClick={() => OsgbButtonHandler()}
             >
                 OSGB
             </OsgbButton>
 
-            <LatLongArea />
+            {switchAreas()}
+            
         </BodyContainerDiv>
     );
 };

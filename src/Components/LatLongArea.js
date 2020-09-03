@@ -66,6 +66,7 @@ const LatLongAreaStyled = styled.div`
 `;
 
 const LatLongArea = (props) => {
+    // States
     const [isDecimal, setIsDecimal] = useState(true); // Decimal / Degree
     const [buttonPlaceHolder, setButtonPlaceHolder] = useState("(Degrees)"); // Decimal / Degree Text
 
@@ -81,6 +82,8 @@ const LatLongArea = (props) => {
     const latLongDecToDegHandler = () => {
         CheckDecimalToDegree();
         setIsDecimal(!isDecimal);
+
+        return;
     };
 
     const CheckDecimalToDegree = () => {
@@ -91,7 +94,6 @@ const LatLongArea = (props) => {
             setButtonPlaceHolder("(Degrees)");
             return;
         }
-
     };
 
     // Clears inputs and the output
@@ -101,58 +103,73 @@ const LatLongArea = (props) => {
         outputRef.current.value = "";
 
         console.log("ClearTextHandler(): Text cleared");
+
+        return;
     };
 
     const convertHandler = () => {
-
         let lat = Number(input1Ref.current.value);
         let lon = Number(input2Ref.current.value);
 
         let result = null;
 
-        if (isDecimal) {
-            result = converter.getOSGB_FromDec(lat, lon);
-            outputRef.current.value = `${Math.ceil(
-                result.easting
-            )}, ${Math.ceil(result.northing)}`;
-        } else {
-            // Degree
-            // Get Degree from Decimal
-            const [latdeg, latmin, latsec] = converter.getDegreeFromDecimal(
-                lat
-            );
-            const [londeg, lonmin, lonsec] = converter.getDegreeFromDecimal(
-                lon
-            );
+        // If inputs are empty - alert
+        if(input1Ref.current.value === "" || input2Ref.current.value === ""){
+            alert("Please enter an Latitude And a Longitude Value!");
+            return;
+        }
 
-            console.table(latdeg, latmin, latsec, londeg, lonmin, lonsec);
+        // Try conversion
+        try {
+            if (isDecimal) {
+                result = converter.getOSGB_FromDec(lat, lon);
+                outputRef.current.value = `${Math.ceil(
+                    result.easting
+                )}, ${Math.ceil(result.northing)}`;
+            } else {
+                // Degree
+                // Get Degree from Decimal
+                const [latdeg, latmin, latsec] = converter.getDegreeFromDecimal(
+                    lat
+                );
+                const [londeg, lonmin, lonsec] = converter.getDegreeFromDecimal(
+                    lon
+                );
 
-            result = converter.getOSGB_FromDMS(
-                latdeg,
-                latmin,
-                latsec,
-                londeg,
-                lonmin,
-                lonsec
-            );
+                console.table(latdeg, latmin, latsec, londeg, lonmin, lonsec);
 
-            outputRef.current.value = `${Math.ceil(
-                result.easting
-            )}, ${Math.ceil(result.northing)}`;
+                result = converter.getOSGB_FromDMS(
+                    latdeg,
+                    latmin,
+                    latsec,
+                    londeg,
+                    lonmin,
+                    lonsec
+                );
+
+                outputRef.current.value = `${Math.ceil(
+                    result.easting
+                )}, ${Math.ceil(result.northing)}`;
+            }
+        } catch (error) { // Catch if Easing or Northing is Invalid then Handle
+            // TODO HANDLE - Dynamically color input text
+
+            console.error("ERROR: INVALID Latitude / Longitude");
+            alert("ERROR: INVALID Latitude / Longitude");
+
+            return;
         }
 
         // Log Debug
-        console.log(input1Ref.current.value);
-        console.log(input2Ref.current.value);
-        console.log(outputRef.current.value);
-
-        console.log("convertHandler(): Clicked");
+        // console.log(input1Ref.current.value);
+        // console.log(input2Ref.current.value);
+        // console.log(outputRef.current.value);
+        //console.log("convertHandler(): Clicked");
     };
 
     return (
         <LatLongAreaStyled>
             <input
-                id="Lat"
                 ref={input1Ref}
                 type="text"
                 className="LatInput"
@@ -160,7 +177,6 @@ const LatLongArea = (props) => {
             />
 
             <input
-                id="Long"
                 ref={input2Ref}
                 type="text"
                 className="LongInput"
@@ -168,7 +184,6 @@ const LatLongArea = (props) => {
             />
 
             <button
-                type="submit"
                 className="ConvertButton"
                 onClick={convertHandler}
             >
@@ -176,7 +191,6 @@ const LatLongArea = (props) => {
             </button>
 
             <button
-                type="submit"
                 className="DecToDegButton"
                 onClick={() => latLongDecToDegHandler()}
             >
@@ -188,7 +202,6 @@ const LatLongArea = (props) => {
             </button>
 
             <input
-                id="output"
                 ref={outputRef}
                 type="text"
                 className="output"

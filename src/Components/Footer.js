@@ -36,18 +36,18 @@ const Footer = () => {
         <FooterStyleDiv>
             <a href="https://www.twitch.tv/youugotssponged/">
                 <img
-                    src="/img/twitch-tv-2-64.png"
+                    src="./img/twitch-tv-2-64.png"
                     alt="Link to my Twitch"
                 />
             </a>
             <a href="https://www.github.com/youugotssponged/">
                 <img
-                    src="/img/GitHub-Mark-Light-64px.png"
+                    src="./img/GitHub-Mark-Light-64px.png"
                     alt="Link to my github"
                 />
             </a>
             <a href="https://www.linkedin.com/in/jordan-mccann-b808b4156/">
-                <img src="/img/linkedin-64.png" alt="Link to my LinkedIn" />
+                <img src="./img/linkedin-64.png" alt="Link to my LinkedIn" />
             </a>
             <h1>youugotssponged</h1>
             <h1>youugotssponged</h1>

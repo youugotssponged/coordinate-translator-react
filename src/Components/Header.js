@@ -37,7 +37,7 @@ const Header = () => {
         <HeaderDiv>
             <h1> Coordinate To OSGB Converter</h1>
             <img
-                src="/img/os_grid_icon.png"
+                src="./img/os_grid_icon.png"
                 alt="OS GRID logo from FunkyPenguin10's Flutter App"
             ></img>
         </HeaderDiv>
