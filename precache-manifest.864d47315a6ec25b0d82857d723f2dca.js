@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "74a86aef4632376baa6db927cf34bb68",
+    "revision": "eabd704b27f045d4846ed2e86a735e1d",
     "url": "/coordinate-translator-react/index.html"
   },
   {
